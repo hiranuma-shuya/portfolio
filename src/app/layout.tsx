@@ -1,27 +1,28 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+import { Inter, Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
-import type { Viewport } from 'next'
-import { ThemeProvider } from 'next-themes'
-import { Header, Nav } from '~/app/_component'
+import { Header } from '~/app/_component/header'
 import { Inner } from '~/app/_component/ui'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const notoSansJP = Noto_Sans_JP({ subsets: ['latin'], variable: '--font-noto-sans-jp' })
 
 export const metadata: Metadata = {
   title: {
-    default: 'Hiranuma Shuya',
-    template: '%s | Hiranuma Shuya',
+    default: '平沼柊哉 | Software Engineer & Project Manager',
+    template: '%s | 平沼柊哉',
   },
-  description: 'I’m an Japanese Software Engineer.',
+  description:
+    'ITのこと、まるごとお任せください。システム開発・保守運用・業務効率化・AI導入まで、御社のIT担当として幅広くサポートいたします。',
   openGraph: {
     title: {
-      default: 'Hiranuma Shuya',
-      template: '%s | Hiranuma Shuya',
+      default: '平沼柊哉 | Software Engineer & Project Manager',
+      template: '%s | 平沼柊哉',
     },
-    description: 'I’m an Japanese Software Engineer.',
+    description:
+      'ITのこと、まるごとお任せください。システム開発・保守運用・業務効率化・AI導入まで、御社のIT担当として幅広くサポートいたします。',
     url: process.env.NEXT_PUBLIC_SITE_URL,
-    siteName: 'Hiranuma Shuya',
+    siteName: '平沼柊哉',
     images: [
       {
         url: '/img/portfolio.jpg',
@@ -33,9 +34,19 @@ export const metadata: Metadata = {
     type: 'website',
   },
   generator: 'Next.js',
-  keywords: ['エンジニア', 'デザイン', 'プログラミング', 'システム開発', 'WEBアプリケーション', 'DX', 'IT'],
-  authors: [{ name: 'Hiranuma Shuya' }],
-  creator: 'Hiranuma Shuya',
+  keywords: [
+    'システム開発',
+    'IT支援',
+    '業務効率化',
+    'DX推進',
+    'AI導入',
+    'IT顧問',
+    'Web開発',
+    '保守運用',
+    '業務委託',
+  ],
+  authors: [{ name: '平沼柊哉' }],
+  creator: '平沼柊哉',
 }
 
 export const viewport: Viewport = {
@@ -49,21 +60,23 @@ export const viewport: Viewport = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: any
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="ja" suppressHydrationWarning={true}>
+    <html lang="ja">
       <head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </head>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true}>
-          <Header />
-          <main className="pb-32 md:pt-8">
-            <Inner>{children}</Inner>
-          </main>
-          <Nav />
-        </ThemeProvider>
+      <body className={`${inter.variable} ${notoSansJP.variable} font-sans`}>
+        <Header />
+        <main className="pt-16">
+          <Inner>{children}</Inner>
+        </main>
+        <footer className="border-t border-slate-200 py-8 mt-20">
+          <Inner>
+            <p className="text-center text-sm text-slate-400">&copy; 2025 Hiranuma Shuya. All rights reserved.</p>
+          </Inner>
+        </footer>
       </body>
     </html>
   )

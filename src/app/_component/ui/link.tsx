@@ -4,7 +4,7 @@ import type React from 'react'
 import { tv } from 'tailwind-variants'
 
 export const LinkTextVariants = tv({
-  base: 'underline text-orange-500 hover:text-orange-600',
+  base: 'underline text-navy-500 hover:text-navy-600',
 })
 
 interface Props extends LinkProps {

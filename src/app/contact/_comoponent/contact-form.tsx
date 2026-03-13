@@ -5,13 +5,13 @@ import { Button } from '~/app/_component/ui'
 import { sendEmail } from '~/app/contact/_comoponent/send-email/actions'
 import { initialState } from '~/app/contact/_comoponent/send-email/state'
 
-const labelStyle = 'text-sm font-bold text-slate-500 dark:text-slate-400'
+const labelStyle = 'text-sm font-bold text-slate-500'
 
 const inputStyle = `
   flex h-10 w-full rounded-md px-3 py-2 text-foreground
   border border-slate-400 bg-background ring-offset-background
   placeholder:text-slate-500 file:text-sm file:font-medium
-  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring
+  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-500
   file:border-0 file:bg-transparent
   disabled:cursor-not-allowed disabled:opacity-50
 `
@@ -55,7 +55,7 @@ export const ContactForm = () => {
         </div>
         <div className="flex justify-between">
           <FormButton />
-          <button type="reset" className="text-orange-500 hover:text-orange-600">
+          <button type="reset" className="text-navy-500 hover:text-navy-600">
             フォームをクリア
           </button>
         </div>

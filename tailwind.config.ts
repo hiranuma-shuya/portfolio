@@ -1,8 +1,6 @@
-/** tailwind.config.ts */
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  darkMode: ['selector', '.dark'],
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,6 +11,18 @@ const config: Config = {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        navy: {
+          50: '#eef3f9',
+          100: '#d4e0f0',
+          200: '#a9c1e1',
+          300: '#7ea2d2',
+          400: '#5383c3',
+          500: '#1e3a5f',
+          600: '#1a3354',
+          700: '#152a45',
+          800: '#102037',
+          900: '#0b1728',
+        },
       },
     },
   },

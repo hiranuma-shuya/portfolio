@@ -10,8 +10,8 @@ export const ButtonVariants = tv({
       base: 'w-full max-w-[140px] md:max-w-[200px]',
     },
     variant: {
-      base: 'bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-all duration-300',
-      subtle: 'bg-orange-100 text-orange-500 hover:bg-orange-200 transition-all duration-300',
+      base: 'bg-navy-500 text-white font-semibold hover:bg-navy-600 transition-all duration-300',
+      subtle: 'bg-navy-50 text-navy-500 hover:bg-navy-100 transition-all duration-300',
     },
   },
 })

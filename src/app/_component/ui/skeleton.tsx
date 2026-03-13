@@ -2,7 +2,7 @@ import type React from 'react'
 import { tv } from 'tailwind-variants'
 
 export const SkeletonVariants = tv({
-  base: 'rounded border border-slate-300 dark:border-slate-800 bg-slate-200 dark:bg-slate-900 animate-pulse',
+  base: 'rounded border border-slate-300 bg-slate-200 animate-pulse',
 })
 
 export interface SkeletonProps {

@@ -13,8 +13,8 @@ export const TextVariants = tv({
       '2xl': 'text-2xl md:text-5xl',
     },
     color: {
-      dark: 'text-slate-900 dark:text-slate-100',
-      gray: 'text-slate-600 dark:text-slate-300',
+      dark: 'text-slate-900',
+      gray: 'text-slate-600',
     },
   },
   defaultVariants: {
