@@ -186,9 +186,9 @@ export default function Home() {
       {/* Hero */}
       <section className="py-20 md:py-32 text-center">
         <h1 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-6">
-          ITのこと、
+          御社のIT、
           <br className="md:hidden" />
-          まるごとお任せください。
+          私が引き受けます。
         </h1>
         <p className="text-base md:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed mb-10">
           システム開発から保守運用、業務効率化、AI導入まで。

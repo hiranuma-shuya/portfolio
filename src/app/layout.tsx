@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     template: '%s | 平沼柊哉',
   },
   description:
-    'ITのこと、まるごとお任せください。システム開発・保守運用・業務効率化・AI導入まで、御社のIT担当として幅広くサポートいたします。',
+    '御社のIT、私が引き受けます。システム開発・保守運用・業務効率化・AI導入まで、御社のIT担当として幅広くサポートいたします。',
   openGraph: {
     title: {
       default: '平沼柊哉 | Software Engineer & Project Manager',
       template: '%s | 平沼柊哉',
     },
     description:
-      'ITのこと、まるごとお任せください。システム開発・保守運用・業務効率化・AI導入まで、御社のIT担当として幅広くサポートいたします。',
+      '御社のIT、私が引き受けます。システム開発・保守運用・業務効率化・AI導入まで、御社のIT担当として幅広くサポートいたします。',
     url: process.env.NEXT_PUBLIC_SITE_URL,
     siteName: '平沼柊哉',
     images: [
