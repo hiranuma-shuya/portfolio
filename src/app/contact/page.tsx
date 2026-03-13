@@ -3,7 +3,7 @@ import { ContactForm } from '~/app/contact/_comoponent/contact-form'
 
 export default function Page() {
   return (
-    <div className="grid gap-8 md:gap-12">
+    <div className="grid gap-8 md:gap-12 mt-16">
       <div className="grid gap-1 md:gap-2">
         <Title as="h1" className="">
           Contact

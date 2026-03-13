@@ -1,11 +1,11 @@
 import {
-  ComputerDesktopIcon,
-  WrenchScrewdriverIcon,
   BoltIcon,
-  SparklesIcon,
   ChatBubbleLeftRightIcon,
-  CpuChipIcon,
   CheckIcon,
+  ComputerDesktopIcon,
+  CpuChipIcon,
+  SparklesIcon,
+  WrenchScrewdriverIcon,
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -152,25 +152,29 @@ const careers = [
     period: '2026.1 -',
     company: '株式会社Airion',
     role: '代表取締役',
-    description: 'ITコンサルティング・受託開発を手がける自社を設立。中小企業向けにシステム開発からIT顧問まで幅広く支援。',
+    description:
+      'ITコンサルティング・受託開発を手がける自社を設立。中小企業向けにシステム開発からIT顧問まで幅広く支援。',
   },
   {
     period: '2025.1 - 2025.12',
     company: '株式会社Arent',
     role: 'PM / PL',
-    description: '大手建設会社向けBIM連携Webシステムの開発プロジェクトを推進。15名規模のチーム（ベトナムオフショア含む）をマネジメント。建築ドメイン知識とIT知識を活かし、顧客と開発チームの橋渡し役として貢献。',
+    description:
+      '大手建設会社向けBIM連携Webシステムの開発プロジェクトを推進。15名規模のチーム（ベトナムオフショア含む）をマネジメント。建築ドメイン知識とIT知識を活かし、顧客と開発チームの橋渡し役として貢献。',
   },
   {
     period: '2023.1 - 2024.12',
     company: '株式会社企ての樹',
     role: 'フルスタックエンジニア / PM',
-    description: 'Webアプリの受託開発で、要件定義から設計・開発・運用まで一貫して担当。終活支援サービス、建設会社の基幹システム、モバイルオーダーアプリなど多数のプロジェクトをリード。',
+    description:
+      'Webアプリの受託開発で、要件定義から設計・開発・運用まで一貫して担当。終活支援サービス、建設会社の基幹システム、モバイルオーダーアプリなど多数のプロジェクトをリード。',
   },
   {
     period: '2020.4 - 2022.12',
     company: '積水ハウス株式会社',
     role: 'IT企画 / PM',
-    description: 'ITデザイン部にて基幹システムの企画・PM・設計を担当。300名規模のベンダーコントロール、事業部門との要件調整、DX戦略の立案・推進を経験。',
+    description:
+      'ITデザイン部にて基幹システムの企画・PM・設計を担当。300名規模のベンダーコントロール、事業部門との要件調整、DX戦略の立案・推進を経験。',
   },
   {
     period: '2019.4 -',
@@ -184,11 +188,11 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="py-20 md:py-32 text-center">
-        <h1 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-6">
-          御社のIT、
-          <br className="md:hidden" />
-          私が引き受けます。
+      <section className="py-16 md:py-24 text-center">
+        <h1 className="text-2xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-6">
+          ITのこと、
+          <br />
+          まるごとお任せください。
         </h1>
         <p className="text-base md:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed mb-10">
           システム開発から保守運用、業務効率化、AI導入まで。
@@ -225,12 +229,13 @@ export default function Home() {
               width={200}
               height={273}
               className="rounded-2xl object-cover"
-              priority
+              priority={true}
             />
           </div>
           <div className="grid gap-5 text-slate-600 leading-relaxed">
             <p>
-              平沼 柊哉（ひらぬま しゅうや）と申します。ソフトウェアエンジニア・プロジェクトマネージャーとして、6年以上の実務経験があります。
+              平沼 柊哉（ひらぬま
+              しゅうや）と申します。ソフトウェアエンジニア・プロジェクトマネージャーとして、6年以上の実務経験があります。
             </p>
             <p>
               大手企業のIT部門で数百名規模のプロジェクト推進を経験した後、スタートアップで開発の現場に入り、企画から設計・開発・運用まですべての工程を一人で回せるようになりました。2019年からは個人事業主としても多くの企業様をサポートしています。
@@ -278,9 +283,7 @@ export default function Home() {
             <div
               key={plan.name}
               className={`relative rounded-xl p-6 flex flex-col ${
-                plan.recommended
-                  ? 'border-2 border-navy-500 shadow-md'
-                  : 'border border-slate-200'
+                plan.recommended ? 'border-2 border-navy-500 shadow-md' : 'border border-slate-200'
               }`}
             >
               {plan.recommended && (
@@ -319,7 +322,9 @@ export default function Home() {
         {/* Spot */}
         <div className="bg-slate-50 rounded-xl p-6 md:p-8 mb-8">
           <h3 className="text-lg font-bold text-slate-900 mb-1">スポット開発</h3>
-          <p className="text-sm text-slate-500 mb-5">特定のプロジェクトだけ依頼したい方向け。単発・見積もりベースで承ります。</p>
+          <p className="text-sm text-slate-500 mb-5">
+            特定のプロジェクトだけ依頼したい方向け。単発・見積もりベースで承ります。
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {spotServices.map((item) => (
               <div key={item.name} className="bg-white rounded-lg p-4 text-center">
@@ -381,7 +386,7 @@ export default function Home() {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    fill
+                    fill={true}
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
@@ -413,10 +418,7 @@ export default function Home() {
           <div className="absolute left-4 top-0 bottom-0 w-px bg-slate-200 md:left-[160px]" />
           <div className="grid gap-8">
             {careers.map((career) => (
-              <div
-                key={career.company}
-                className="relative pl-10 md:pl-0 md:grid md:grid-cols-[160px_1fr] md:gap-8"
-              >
+              <div key={career.company} className="relative pl-10 md:pl-0 md:grid md:grid-cols-[160px_1fr] md:gap-8">
                 <div className="absolute left-2.5 top-1.5 w-3 h-3 rounded-full bg-navy-500 border-2 border-white md:left-[157px]" />
                 <p className="text-sm text-slate-400 font-medium md:text-right">{career.period}</p>
                 <div>

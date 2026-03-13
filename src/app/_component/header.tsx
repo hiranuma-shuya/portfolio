@@ -6,6 +6,7 @@ import { Inner } from '~/app/_component/ui'
 const navLinks = [
   { label: 'About', href: '/#about' },
   { label: 'Services', href: '/#services' },
+  { label: 'Plans', href: '/#plans' },
   { label: 'Projects', href: '/#projects' },
   { label: 'Career', href: '/#career' },
 ]

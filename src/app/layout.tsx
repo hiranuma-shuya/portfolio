@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     template: '%s | 平沼柊哉',
   },
   description:
-    '御社のIT、私が引き受けます。システム開発・保守運用・業務効率化・AI導入まで、御社のIT担当として幅広くサポートいたします。',
+    'ITのこと、まるごとお任せください。システム開発・保守運用・業務効率化・AI導入まで、御社のIT担当として幅広くサポートいたします。',
   openGraph: {
     title: {
       default: '平沼柊哉 | Software Engineer & Project Manager',
       template: '%s | 平沼柊哉',
     },
     description:
-      '御社のIT、私が引き受けます。システム開発・保守運用・業務効率化・AI導入まで、御社のIT担当として幅広くサポートいたします。',
+      'ITのこと、まるごとお任せください。システム開発・保守運用・業務効率化・AI導入まで、御社のIT担当として幅広くサポートいたします。',
     url: process.env.NEXT_PUBLIC_SITE_URL,
     siteName: '平沼柊哉',
     images: [
@@ -34,17 +34,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   generator: 'Next.js',
-  keywords: [
-    'システム開発',
-    'IT支援',
-    '業務効率化',
-    'DX推進',
-    'AI導入',
-    'IT顧問',
-    'Web開発',
-    '保守運用',
-    '業務委託',
-  ],
+  keywords: ['システム開発', 'IT支援', '業務効率化', 'DX推進', 'AI導入', 'IT顧問', 'Web開発', '保守運用', '業務委託'],
   authors: [{ name: '平沼柊哉' }],
   creator: '平沼柊哉',
 }
@@ -60,7 +50,7 @@ export const viewport: Viewport = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: import('react').ReactNode
 }>) {
   return (
     <html lang="ja">
