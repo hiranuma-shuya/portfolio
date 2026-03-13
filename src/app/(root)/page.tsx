@@ -420,7 +420,7 @@ export default function Home() {
             {careers.map((career) => (
               <div key={career.company} className="relative pl-10 md:pl-0 md:grid md:grid-cols-[200px_1fr] md:gap-8">
                 <div className="absolute left-2.5 top-1.5 w-3 h-3 rounded-full bg-navy-500 border-2 border-white md:left-[197px]" />
-                <p className="text-sm text-slate-400 font-medium md:text-right">{career.period}</p>
+                <p className="text-sm text-slate-400 font-medium md:text-right md:pr-6">{career.period}</p>
                 <div>
                   <h3 className="font-bold text-slate-900">{career.company}</h3>
                   <p className="text-sm font-medium text-navy-500 mt-0.5">{career.role}</p>
