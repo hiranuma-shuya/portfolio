@@ -151,9 +151,9 @@ const careers = [
   {
     period: '2026.1 -',
     company: '株式会社Airion',
-    role: '代表取締役',
+    role: 'エンジニア / PM',
     description:
-      'ITコンサルティング・受託開発を手がける自社を設立。中小企業向けにシステム開発からIT顧問まで幅広く支援。',
+      'ITコンサルティング・受託開発を手がける企業で、エンジニアリングとプロジェクトマネジメントを担当。中小企業向けにシステム開発からIT顧問まで幅広く支援。',
   },
   {
     period: '2025.1 - 2025.12',
@@ -415,12 +415,12 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900">経歴</h2>
         </div>
         <div className="relative">
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-slate-200 md:left-[160px]" />
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-slate-200 md:left-[200px]" />
           <div className="grid gap-8">
             {careers.map((career) => (
-              <div key={career.company} className="relative pl-10 md:pl-0 md:grid md:grid-cols-[160px_1fr] md:gap-8">
-                <div className="absolute left-2.5 top-1.5 w-3 h-3 rounded-full bg-navy-500 border-2 border-white md:left-[157px]" />
-                <p className="text-sm text-slate-400 font-medium md:text-right">{career.period}</p>
+              <div key={career.company} className="relative pl-10 md:pl-0 md:grid md:grid-cols-[200px_1fr] md:gap-8">
+                <div className="absolute left-2.5 top-1.5 w-3 h-3 rounded-full bg-navy-500 border-2 border-white md:left-[197px]" />
+                <p className="text-sm text-slate-400 font-medium md:text-right md:pr-6">{career.period}</p>
                 <div>
                   <h3 className="font-bold text-slate-900">{career.company}</h3>
                   <p className="text-sm font-medium text-navy-500 mt-0.5">{career.role}</p>
