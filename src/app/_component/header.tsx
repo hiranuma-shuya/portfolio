@@ -4,11 +4,11 @@ import Link from 'next/link'
 import { Inner } from '~/app/_component/ui'
 
 const navLinks = [
-  { label: 'About', href: '/#about' },
   { label: 'Services', href: '/#services' },
-  { label: 'Plans', href: '/#plans' },
+  { label: 'Strengths', href: '/#strengths' },
   { label: 'Projects', href: '/#projects' },
-  { label: 'Career', href: '/#career' },
+  { label: 'About', href: '/#about' },
+  { label: 'Plans', href: '/#plans' },
 ]
 
 export const Header = () => {
@@ -33,14 +33,14 @@ export const Header = () => {
               href="/contact"
               className="text-sm bg-navy-500 text-white px-4 py-2 rounded-lg hover:bg-navy-600 transition-colors"
             >
-              お問い合わせ
+              無料相談
             </Link>
           </nav>
           <Link
             href="/contact"
             className="md:hidden text-sm bg-navy-500 text-white px-4 py-2 rounded-lg hover:bg-navy-600 transition-colors"
           >
-            お問い合わせ
+            無料相談
           </Link>
         </div>
       </Inner>
