@@ -204,9 +204,7 @@ export default function Home() {
     <div>
       {/* Hero */}
       <section className="py-16 md:py-24 text-center">
-        <p className="text-sm md:text-base text-navy-500 font-semibold mb-4">
-          中小企業・スタートアップのIT課題を解決
-        </p>
+        <p className="text-sm md:text-base text-navy-500 font-semibold mb-4">中小企業・スタートアップのIT課題を解決</p>
         <h1 className="text-2xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-6">
           社内にIT担当者がいない。
           <br />
@@ -235,9 +233,7 @@ export default function Home() {
 
       {/* Pain Points */}
       <section className="py-12 md:py-16 bg-slate-50 -mx-4 px-4 md:-mx-0 md:px-0 md:rounded-2xl">
-        <h2 className="text-lg md:text-xl font-bold text-slate-900 text-center mb-8">
-          こんなお悩みはありませんか？
-        </h2>
+        <h2 className="text-lg md:text-xl font-bold text-slate-900 text-center mb-8">こんなお悩みはありませんか？</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
           {[
             'システムを導入したいが、誰に相談すればいいかわからない',
@@ -253,9 +249,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <p className="text-center text-navy-500 font-semibold mt-8">
-          ひとつでも当てはまるなら、お力になれます。
-        </p>
+        <p className="text-center text-navy-500 font-semibold mt-8">ひとつでも当てはまるなら、お力になれます。</p>
       </section>
 
       <hr className="border-slate-200 mt-16" />
@@ -547,9 +541,7 @@ export default function Home() {
             30分の無料相談を予約する
           </Link>
         </div>
-        <p className="text-sm text-slate-400 mt-4">
-          通常24時間以内にご返信いたします
-        </p>
+        <p className="text-sm text-slate-400 mt-4">通常24時間以内にご返信いたします</p>
       </section>
     </div>
   )

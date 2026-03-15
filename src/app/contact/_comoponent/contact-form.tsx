@@ -81,11 +81,7 @@ export const ContactForm = () => {
           <label className={labelStyle} htmlFor="inquiry-type">
             ご相談内容の種類（任意）
           </label>
-          <select
-            id="inquiry-type"
-            name="inquiryType"
-            className={inputStyle}
-          >
+          <select id="inquiry-type" name="inquiryType" className={inputStyle}>
             <option value="">選択してください</option>
             <option value="monthly">IT顧問（月額プラン）について</option>
             <option value="spot">スポット開発について</option>
@@ -103,7 +99,9 @@ export const ContactForm = () => {
             maxLength={1024}
             required={true}
             className={textareaStyle}
-            placeholder={'例：社内のIT環境を整備したいのですが、何から手をつければいいかわかりません。一度相談に乗っていただけますか？'}
+            placeholder={
+              '例：社内のIT環境を整備したいのですが、何から手をつければいいかわかりません。一度相談に乗っていただけますか？'
+            }
           />
         </div>
         <div className="flex justify-between">
