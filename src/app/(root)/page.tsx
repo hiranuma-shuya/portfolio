@@ -53,6 +53,7 @@ const plans = [
   {
     name: 'IT顧問ライト',
     price: '15万円〜',
+    hourNote: '月10時間程度の稼働目安',
     description: 'ITの相談相手がいない。何かあったとき聞ける人がほしい。',
     features: [
       'ITに関する相談（チャット・メールで随時）',
@@ -67,6 +68,7 @@ const plans = [
   {
     name: 'IT顧問スタンダード',
     price: '25万円〜',
+    hourNote: '月20時間程度の稼働目安',
     description: '相談だけでなく、実際に手を動かして改善してほしい。',
     features: [
       'ライトプランの内容すべて',
@@ -80,6 +82,7 @@ const plans = [
   {
     name: 'IT顧問プレミアム',
     price: '40万円〜',
+    hourNote: '月40時間程度の稼働目安',
     description: '新しいシステムをつくりたい。ITで事業を変えたい。',
     features: [
       'スタンダードプランの内容すべて',
@@ -92,7 +95,7 @@ const plans = [
 ]
 
 const spotServices = [
-  { name: 'Webサイト制作', price: '30万円〜' },
+  { name: 'Webサイト制作（5ページ程度）', price: '30万円〜' },
   { name: 'Webアプリ開発', price: '50万円〜' },
   { name: '既存システム改修', price: '20万円〜' },
 ]
@@ -109,6 +112,11 @@ const strengths = [
       'ソフトウェア開発は、建設や製造業と違い、設備も人手も最小限で成り立つ仕事です。さらに今はAIの進化により、一人のエンジニアが対応できる範囲が飛躍的に広がっています。少人数だからこそ、低コスト・高品質・素早い対応が可能です。',
   },
   {
+    title: '「もしもの時」も安心',
+    description:
+      '一人で対応するからといって、リスクがあるわけではありません。ソースコードや設計書はすべてお渡しするため、万が一の際も他のエンジニアへの引き継ぎがスムーズです。AIと仕組みで品質を担保しています。',
+  },
+  {
     title: '相談しやすい窓口',
     description:
       '専門用語を使わず、わかりやすくご説明します。「何を頼めばいいかわからない」「ITに詳しい人が社内にいない」——そんな状態でもお気軽にご連絡ください。',
@@ -118,6 +126,13 @@ const strengths = [
     description:
       'プロジェクト単位の請負、月額の顧問契約、チームに入って一緒に進めるスタイルなど、ご状況に合わせた形でお受けします。',
   },
+]
+
+const achievements = [
+  { number: '7', unit: '年以上', label: '実務経験' },
+  { number: '30', unit: '件以上', label: '開発プロジェクト' },
+  { number: '4', unit: 'つ', label: '自社サービス運営' },
+  { number: '300', unit: '名規模', label: 'ベンダーマネジメント経験' },
 ]
 
 const projects = [
@@ -189,22 +204,25 @@ export default function Home() {
     <div>
       {/* Hero */}
       <section className="py-16 md:py-24 text-center">
+        <p className="text-sm md:text-base text-navy-500 font-semibold mb-4">
+          中小企業・スタートアップのIT課題を解決
+        </p>
         <h1 className="text-2xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-6">
-          ITのこと、
+          社内にIT担当者がいない。
           <br />
-          まるごとお任せください。
+          そのまま損していませんか？
         </h1>
         <p className="text-base md:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed mb-10">
-          システム開発から保守運用、業務効率化、AI導入まで。
+          月額固定で、御社専属の「IT担当」を。
           <br className="hidden md:block" />
-          御社の「IT担当」として、なんでもお手伝いします。
+          システム開発から保守運用、業務効率化、AI導入まで、まるごとお任せください。
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link
             href="/contact"
             className="inline-block bg-navy-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-navy-600 transition-colors"
           >
-            まずは相談してみる
+            30分の無料相談を予約する
           </Link>
           <a
             href="#services"
@@ -215,39 +233,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About */}
-      <section id="about" className="py-16 md:py-24 scroll-mt-16">
-        <div className="mb-10">
-          <p className="text-sm text-navy-500 font-medium tracking-widest mb-2">ABOUT</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">はじめまして</h2>
+      {/* Pain Points */}
+      <section className="py-12 md:py-16 bg-slate-50 -mx-4 px-4 md:-mx-0 md:px-0 md:rounded-2xl">
+        <h2 className="text-lg md:text-xl font-bold text-slate-900 text-center mb-8">
+          こんなお悩みはありませんか？
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          {[
+            'システムを導入したいが、誰に相談すればいいかわからない',
+            '前の担当者がいなくなって、既存システムが放置されている',
+            'IT企業に見積もりを取ったが、金額が妥当か判断できない',
+            'Excel作業やペーパーワークが多く、業務が非効率だと感じている',
+            'AIを活用したいが、何から始めればいいかわからない',
+            'ITのことを気軽に聞ける相手が社内にいない',
+          ].map((pain) => (
+            <div key={pain} className="flex items-start gap-3 bg-white rounded-lg p-4">
+              <span className="text-navy-500 font-bold text-lg shrink-0">?</span>
+              <p className="text-sm text-slate-700">{pain}</p>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col md:flex-row gap-10 items-start">
-          <div className="shrink-0 mx-auto md:mx-0">
-            <Image
-              src="/2026/my_face_v2.webp"
-              alt="平沼 柊哉"
-              width={200}
-              height={273}
-              className="rounded-2xl object-cover"
-              priority={true}
-            />
-          </div>
-          <div className="grid gap-5 text-slate-600 leading-relaxed">
-            <p>
-              平沼 柊哉（ひらぬま
-              しゅうや）と申します。ソフトウェアエンジニア・プロジェクトマネージャーとして、6年以上の実務経験があります。
-            </p>
-            <p>
-              大手企業のIT部門で数百名規模のプロジェクト推進を経験した後、スタートアップで開発の現場に入り、企画から設計・開発・運用まですべての工程を一人で回せるようになりました。2019年からは個人事業主としても多くの企業様をサポートしています。
-            </p>
-            <p>
-              新しいシステムをつくりたい、今あるシステムを直したい、ITまわりを誰かに任せたい——そんなお悩みがあれば、まずはお気軽にご連絡ください。技術的な専門用語は使わず、わかりやすくご対応いたします。
-            </p>
-          </div>
-        </div>
+        <p className="text-center text-navy-500 font-semibold mt-8">
+          ひとつでも当てはまるなら、お力になれます。
+        </p>
       </section>
 
-      <hr className="border-slate-200" />
+      <hr className="border-slate-200 mt-16" />
 
       {/* Services */}
       <section id="services" className="py-16 md:py-24 scroll-mt-16">
@@ -271,11 +282,187 @@ export default function Home() {
 
       <hr className="border-slate-200" />
 
-      {/* Plans */}
+      {/* Strengths - moved before Plans */}
+      <section id="strengths" className="py-16 md:py-24 scroll-mt-16">
+        <div className="mb-10">
+          <p className="text-sm text-navy-500 font-medium tracking-widest mb-2">STRENGTHS</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">選ばれる理由</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {strengths.map((item) => (
+            <div key={item.title} className="bg-slate-50 rounded-xl p-6">
+              <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <hr className="border-slate-200" />
+
+      {/* Achievements / Social Proof */}
+      <section className="py-16 md:py-24">
+        <div className="mb-10">
+          <p className="text-sm text-navy-500 font-medium tracking-widest mb-2">TRACK RECORD</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">実績</h2>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          {achievements.map((item) => (
+            <div key={item.label} className="text-center">
+              <p className="text-3xl md:text-4xl font-bold text-navy-500">
+                {item.number}
+                <span className="text-base font-medium ml-0.5">{item.unit}</span>
+              </p>
+              <p className="text-sm text-slate-500 mt-1">{item.label}</p>
+            </div>
+          ))}
+        </div>
+        <div className="bg-slate-50 rounded-xl p-6 md:p-8">
+          <h3 className="text-lg font-bold text-slate-900 mb-4">経験領域</h3>
+          <div className="flex flex-wrap gap-2">
+            {[
+              '大手企業の基幹システム',
+              'BIM連携Webシステム',
+              '飲食店向けSaaS',
+              '建設業向け業務システム',
+              'ARプラットフォーム',
+              'ECサイト構築',
+              'モバイルオーダーアプリ',
+              'AI導入・活用支援',
+              'DX戦略策定',
+              'ベンダーマネジメント',
+            ].map((tag) => (
+              <span
+                key={tag}
+                className="bg-white border border-slate-200 text-sm text-slate-600 px-3 py-1.5 rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <hr className="border-slate-200" />
+
+      {/* Projects */}
+      <section id="projects" className="py-16 md:py-24 scroll-mt-16">
+        <div className="mb-10">
+          <p className="text-sm text-navy-500 font-medium tracking-widest mb-2">PROJECTS</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">自社サービス</h2>
+        </div>
+        <p className="text-slate-600 mb-8 leading-relaxed">
+          受託開発だけでなく、自分自身でもサービスを企画・開発・運営しています。
+          <br />
+          自らプロダクトを持っているからこそ、「つくって終わり」ではなく、
+          <strong className="text-slate-900">事業として成長させる視点</strong>
+          でご支援できます。
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((project) => (
+            <a
+              key={project.title}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow group block"
+            >
+              {project.image && (
+                <div className="aspect-[1200/630] relative bg-slate-100">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill={true}
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+              )}
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-navy-500 transition-colors">
+                    {project.title}
+                  </h3>
+                  <span className="text-xs text-slate-400 group-hover:text-navy-400 transition-colors">&#8599;</span>
+                </div>
+                <p className="text-sm text-slate-600 leading-relaxed">{project.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <hr className="border-slate-200" />
+
+      {/* About - moved after social proof */}
+      <section id="about" className="py-16 md:py-24 scroll-mt-16">
+        <div className="mb-10">
+          <p className="text-sm text-navy-500 font-medium tracking-widest mb-2">ABOUT</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">はじめまして</h2>
+        </div>
+        <div className="flex flex-col md:flex-row gap-10 items-start">
+          <div className="shrink-0 mx-auto md:mx-0">
+            <Image
+              src="/2026/my_face_v2.webp"
+              alt="平沼 柊哉"
+              width={200}
+              height={273}
+              className="rounded-2xl object-cover"
+              priority={true}
+            />
+          </div>
+          <div className="grid gap-5 text-slate-600 leading-relaxed">
+            <p>
+              平沼 柊哉（ひらぬま
+              しゅうや）と申します。ソフトウェアエンジニア・プロジェクトマネージャーとして、7年以上の実務経験があります。
+            </p>
+            <p>
+              大手企業のIT部門で数百名規模のプロジェクト推進を経験した後、スタートアップで開発の現場に入り、企画から設計・開発・運用まですべての工程を一人で回せるようになりました。2019年からは個人事業主としても多くの企業様をサポートしています。
+            </p>
+            <p>
+              新しいシステムをつくりたい、今あるシステムを直したい、ITまわりを誰かに任せたい——そんなお悩みがあれば、まずはお気軽にご連絡ください。技術的な専門用語は使わず、わかりやすくご対応いたします。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr className="border-slate-200" />
+
+      {/* Career */}
+      <section id="career" className="py-16 md:py-24 scroll-mt-16">
+        <div className="mb-10">
+          <p className="text-sm text-navy-500 font-medium tracking-widest mb-2">CAREER</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">経歴</h2>
+        </div>
+        <div className="relative">
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-slate-200 md:left-[200px]" />
+          <div className="grid gap-8">
+            {careers.map((career) => (
+              <div key={career.company} className="relative pl-10 md:pl-0 md:grid md:grid-cols-[200px_1fr] md:gap-8">
+                <div className="absolute left-2.5 top-1.5 w-3 h-3 rounded-full bg-navy-500 border-2 border-white md:left-[197px]" />
+                <p className="text-sm text-slate-400 font-medium md:text-right md:pr-6">{career.period}</p>
+                <div>
+                  <h3 className="font-bold text-slate-900">{career.company}</h3>
+                  <p className="text-sm font-medium text-navy-500 mt-0.5">{career.role}</p>
+                  <p className="text-sm text-slate-500 mt-1.5 leading-relaxed">{career.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <hr className="border-slate-200" />
+
+      {/* Plans - moved after About/Career for trust building */}
       <section id="plans" className="py-16 md:py-24 scroll-mt-16">
         <div className="mb-10">
           <p className="text-sm text-navy-500 font-medium tracking-widest mb-2">PLANS</p>
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900">料金プラン</h2>
+          <p className="text-slate-500 mt-3 leading-relaxed">
+            IT部門を外注するイメージです。正社員のエンジニアを1名採用すると月額60〜100万円のコストがかかりますが、
+            必要な分だけ柔軟にご利用いただけます。
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -292,10 +479,11 @@ export default function Home() {
                 </span>
               )}
               <h3 className="text-lg font-bold text-slate-900 mb-1">{plan.name}</h3>
-              <p className="text-2xl font-bold text-navy-500 mb-3">
+              <p className="text-2xl font-bold text-navy-500 mb-1">
                 月額{plan.price}
                 <span className="text-xs font-normal text-slate-400 ml-1">（税別）</span>
               </p>
+              <p className="text-xs text-slate-400 mb-3">{plan.hourNote}</p>
               <p className="text-sm text-slate-500 mb-5">{plan.description}</p>
               <ul className="space-y-2 mb-6 flex-1">
                 {plan.features.map((feature) => (
@@ -343,97 +531,6 @@ export default function Home() {
 
       <hr className="border-slate-200" />
 
-      {/* Strengths */}
-      <section className="py-16 md:py-24 scroll-mt-16">
-        <div className="mb-10">
-          <p className="text-sm text-navy-500 font-medium tracking-widest mb-2">STRENGTHS</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">選ばれる理由</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {strengths.map((item) => (
-            <div key={item.title} className="bg-slate-50 rounded-xl p-6">
-              <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <hr className="border-slate-200" />
-
-      {/* Projects */}
-      <section id="projects" className="py-16 md:py-24 scroll-mt-16">
-        <div className="mb-10">
-          <p className="text-sm text-navy-500 font-medium tracking-widest mb-2">PROJECTS</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">自社サービス</h2>
-        </div>
-        <p className="text-slate-600 mb-8 leading-relaxed">
-          受託開発だけでなく、自分自身でもサービスを企画・開発・運営しています。
-          <br />
-          「つくって終わり」ではなく、事業として成長させる視点を持っています。
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project) => (
-            <a
-              key={project.title}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow group block"
-            >
-              {project.image && (
-                <div className="aspect-[1200/630] relative bg-slate-100">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill={true}
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-              )}
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-navy-500 transition-colors">
-                    {project.title}
-                  </h3>
-                  <span className="text-xs text-slate-400 group-hover:text-navy-400 transition-colors">&#8599;</span>
-                </div>
-                <p className="text-sm text-slate-600 leading-relaxed">{project.description}</p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <hr className="border-slate-200" />
-
-      {/* Career */}
-      <section id="career" className="py-16 md:py-24 scroll-mt-16">
-        <div className="mb-10">
-          <p className="text-sm text-navy-500 font-medium tracking-widest mb-2">CAREER</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">経歴</h2>
-        </div>
-        <div className="relative">
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-slate-200 md:left-[200px]" />
-          <div className="grid gap-8">
-            {careers.map((career) => (
-              <div key={career.company} className="relative pl-10 md:pl-0 md:grid md:grid-cols-[200px_1fr] md:gap-8">
-                <div className="absolute left-2.5 top-1.5 w-3 h-3 rounded-full bg-navy-500 border-2 border-white md:left-[197px]" />
-                <p className="text-sm text-slate-400 font-medium md:text-right md:pr-6">{career.period}</p>
-                <div>
-                  <h3 className="font-bold text-slate-900">{career.company}</h3>
-                  <p className="text-sm font-medium text-navy-500 mt-0.5">{career.role}</p>
-                  <p className="text-sm text-slate-500 mt-1.5 leading-relaxed">{career.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <hr className="border-slate-200" />
-
       {/* Contact CTA */}
       <section className="py-16 md:py-24 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">まずはお気軽にご相談ください</h2>
@@ -442,12 +539,17 @@ export default function Home() {
           <br />
           現状をお聞かせいただければ、最適なご提案をいたします。
         </p>
-        <Link
-          href="/contact"
-          className="inline-block bg-navy-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-navy-600 transition-colors"
-        >
-          お問い合わせはこちら
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Link
+            href="/contact"
+            className="inline-block bg-navy-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-navy-600 transition-colors"
+          >
+            30分の無料相談を予約する
+          </Link>
+        </div>
+        <p className="text-sm text-slate-400 mt-4">
+          通常24時間以内にご返信いたします
+        </p>
       </section>
     </div>
   )

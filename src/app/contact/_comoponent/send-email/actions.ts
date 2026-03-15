@@ -5,15 +5,15 @@ import { Resend } from 'resend'
 import { EmailTemplate } from './email-template'
 import type { State } from './state'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-const sendEmailAddress = process.env.SEND_EMAIL
-
 export const sendEmail = async (_: State, formData: FormData): Promise<State> => {
   const name = formData.get('name') as string
   const email = formData.get('email') as string
   const message = formData.get('message') as string
 
-  if (!sendEmailAddress) {
+  const apiKey = process.env.RESEND_API_KEY
+  const sendEmailAddress = process.env.SEND_EMAIL
+
+  if (!apiKey || !sendEmailAddress) {
     return { message: 'サーバー側で問い合わせに失敗しました。再度お問い合わせください。' }
   }
 
@@ -38,6 +38,7 @@ export const sendEmail = async (_: State, formData: FormData): Promise<State> =>
     return { message: 'メッセージは1000文字以内で入力してください' }
   }
 
+  const resend = new Resend(apiKey)
   const { error } = await resend.emails.send({
     from: `hiranuma shuya<${sendEmailAddress}>`,
     bcc: 'shuuuuuuuuuuya@icloud.com',
