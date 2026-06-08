@@ -41,7 +41,7 @@ export const sendEmail = async (_: State, formData: FormData): Promise<State> =>
   const resend = new Resend(apiKey)
   const { error } = await resend.emails.send({
     from: `hiranuma shuya<${sendEmailAddress}>`,
-    bcc: 'shuuuuuuuuuuya@icloud.com',
+    bcc: 'hiranuma.shuya@gmail.com',
     to: email,
     subject: 'お問い合わせありがとうございました。',
     react: EmailTemplate({ name, email, message }),
